@@ -1,0 +1,29 @@
+leg_id,route_id,from,to,mode,cost_kvnd,time_h,delay_probability,risk_extra_h
+LEG-00001,RT-0001,Hanoi,Vinh,Air,39.95,4.96,0.093,0.59
+LEG-00002,RT-0001,Hanoi,Vinh,Truck,13.52,8.24,0.138,1.26
+LEG-00003,RT-0002,Hanoi,Vinh,Rail,11.79,14.38,0.084,1.55
+LEG-00004,RT-0002,Hanoi,Vinh,Truck,13.13,9.45,0.162,1.15
+LEG-00005,RT-0003,Can Tho,Hanoi,Ship,5.57,62.2,0.218,4.76
+LEG-00006,RT-0003,Can Tho,Hanoi,Truck,16.85,9.18,0.192,0.9
+LEG-00007,RT-0004,Can Tho,Hanoi,Air,46.7,3.7,0.062,0.49
+LEG-00008,RT-0004,Can Tho,Hanoi,Truck,14.11,8.94,0.144,1.2
+LEG-00009,RT-0005,Hanoi,Ho Chi Minh City,Truck,16.84,7.25,0.123,0.7
+LEG-00010,RT-0006,Hanoi,Ho Chi Minh City,Air,50.22,4.53,0.093,0.49
+LEG-00011,RT-0006,Hanoi,Ho Chi Minh City,Truck,16.16,7.25,0.115,1.1
+LEG-00012,RT-0007,Hanoi,Ho Chi Minh City,Ship,6.46,69.36,0.324,6.19
+LEG-00013,RT-0007,Hanoi,Ho Chi Minh City,Truck,16.11,7.77,0.108,0.96
+LEG-00014,RT-0008,Quy Nhon,Ho Chi Minh City,Truck,14.44,7.74,0.165,1.03
+LEG-00015,RT-0009,Quy Nhon,Ho Chi Minh City,Rail,11.16,14.18,0.119,1.2
+LEG-00016,RT-0009,Quy Nhon,Ho Chi Minh City,Truck,12.89,7.09,0.17,0.98
+LEG-00017,RT-0010,Quy Nhon,Ho Chi Minh City,Air,47.27,3.64,0.089,0.48
+LEG-00018,RT-0010,Quy Nhon,Ho Chi Minh City,Truck,15.04,7.76,0.162,0.92
+LEG-00019,RT-0011,Hanoi,Ho Chi Minh City,Ship,7.43,69.69,0.339,5.82
+LEG-00020,RT-0011,Hanoi,Ho Chi Minh City,Truck,14.38,7.11,0.186,0.97
+LEG-00021,RT-0012,Hanoi,Ho Chi Minh City,Truck,14.59,8.65,0.121,1.21
+LEG-00022,RT-0013,Hanoi,Ho Chi Minh City,Rail,11.38,14.32,0.108,1.58
+LEG-00023,RT-0013,Hanoi,Ho Chi Minh City,Truck,16.65,7.07,0.142,0.72
+LEG-00024,RT-0014,Quy Nhon,Da Nang,Air,41.32,4.88,0.084,0.45
+LEG-00025,RT-0014,Quy Nhon,Da Nang,Truck,16.3,6.87,0.191,0.99
+LEG-00026,RT-0015,Quy Nhon,Da Nang,Ship,5.3,62.68,0.298,7.58
+LEG-00027,RT-0015,Quy Nhon,Da Nang,Truck,16.18,8.32,0.129,0.9
+LEG-00028,RT-0016,Quy Nhon,Da Nang,Truck,15.38,6.87,0.179,1.24
