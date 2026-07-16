@@ -1,6 +1,21 @@
+# Python
 __pycache__/
 *.pyc
+
+# Virtual environments
 .venv/
 venv/
-.DS_Store
+env/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
 .streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db

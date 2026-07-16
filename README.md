@@ -1,84 +1,192 @@
-# 🚚 SAFiRi AI — Route Recommendation Chatbot
+# Route Recommendation
 
 **Chat with your logistics data — the bot picks the optimal route and explains why.**
 
 ## 📖 Overview
 
-**SAFiRi AI** is a chat-based assistant that recommends the **optimal shipping route** from CSV data. Just attach your files in the chat box — the bot automatically computes a monetized **Money Score** for every candidate route, selects the best one for each shipment, and replies with a comparison table plus a plain-language explanation of exactly where the chosen route **wins** (cost, time, delay risk, driver reliability).
+**OpS4f1R1** is a chat-based assistant that recommends the **optimal shipping route** from CSV data. Simply upload your logistics datasets in the chat interface, and the assistant automatically evaluates every candidate route using a monetized **Money Score**. It then selects the optimal route for each shipment and explains why it outperforms the alternatives based on **cost, travel time, delay risk, and driver reliability**.
 
-The routing decision runs entirely on **pure Python/pandas** — deterministic, 100% reproducible, no black box, no GPU, no API key required.
+The routing algorithm is implemented entirely with **Python** and **pandas**, making every recommendation deterministic, transparent, and fully reproducible. No machine learning model, GPU, or API key is required.
+
+---
 
 ## 🎬 Demo
 
-📹 **Demo video:** [zzz](zzz)
+<p align="center">
+  <img src="assets/demo.png" alt="Demo" width="1000">
+</p>
+
+---
 
 ## ⚙️ Environment Setup
 
+Clone the repository:
+
 ```bash
-git clone <repository-url>
-cd safiri-app
+git clone https://github.com/DOANHONGBAO/Optimizing-Shipment-Routes.git
+cd Optimizing-Shipment-Routes
+```
 
+Create a virtual environment:
+
+```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+```
 
+Activate the environment:
+
+**Linux / macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+Install the required packages:
+
+```bash
 pip install -r requirements.txt
 ```
 
-| Component | Requirement |
-|---|---|
-| Python | ≥ 3.9 (3.10–3.12 recommended) |
-| streamlit | ≥ 1.43 |
-| pandas | ≥ 2.0 |
-| numpy | ≥ 1.24 |
-| plotly | ≥ 5.20 |
+### Requirements
 
-**Run the app:**
+| Component | Version |
+|-----------|----------|
+| Python | ≥ 3.9 (3.10–3.12 recommended) |
+| Streamlit | ≥ 1.43 |
+| pandas | ≥ 2.0 |
+| NumPy | ≥ 1.24 |
+| Plotly | ≥ 5.20 |
+
+Run the application:
 
 ```bash
 streamlit run app.py
 ```
 
-Open your browser at `http://localhost:8501`.
+Open your browser and visit:
 
-## 📂 Test Data
-
-Sample dataset for testing: [xxx](xxx)
-
-Don't have data on hand? Type **`demo`** in the chat box and the bot will generate synthetic data and answer right away.
-
-## 💬 How to Use
-
-1. Open the app — the bot greets you and asks for a file.
-2. Attach `shipments.csv` + `routes.csv` (optionally `legs.csv`) to the chat input and send.
-3. The bot automatically replies with:
-   - A summary table of the recommended route for every shipment
-   - A detailed ranking table + comparison chart for each shipment
-   - A plain-language explanation, plus a stability check on the recommendation
-   - Download buttons for the results (CSV / JSON)
-
-Nothing to configure — everything runs automatically.
-
-<details>
-<summary><b>📋 Input data schema</b></summary>
-
-**shipments.csv**: `shipment_id, origin, destination`
-
-**routes.csv**: `route_id, shipment_id, archetype, total_cost_kvnd, total_time_h, delay_probability, expected_risk_hours, driver_score`
-
-**legs.csv** *(optional)*: `leg_id, route_id, from, to, mode, cost_kvnd, time_h, delay_probability, risk_extra_h`
-
-</details>
-
-## 🧪 Unit Tests
-
-```bash
-pytest tests/ -v
 ```
-
-## 🚀 Deploy to Streamlit Community Cloud
-
-Push the repo to GitHub → [share.streamlit.io](https://share.streamlit.io) → **New app** → select the repo, branch `main`, main file `app.py` → **Deploy**. No secrets or API keys needed.
+http://localhost:8501
+```
 
 ---
 
-*Built as part of the **SAFiRi AI Technical Assessment**.*
+## 📂 Sample Data
+
+Download the sample datasets here:
+
+https://drive.google.com/drive/folders/1W9nq14dkVKUZz46NKTmfQYSRQfafrG2h?usp=drive_link
+
+If you don't have your own data, simply type:
+
+```text
+demo
+```
+
+The chatbot will automatically generate synthetic shipment and routing datasets for demonstration.
+
+---
+
+## 💬 Usage
+
+1. Launch the Streamlit application.
+2. Upload one or more CSV files:
+   - `shipments.csv`
+   - `routes.csv`
+   - *(Optional)* `legs.csv`
+3. Ask the chatbot to recommend the best shipping routes.
+4. The assistant automatically:
+   - Computes the **Money Score** for every candidate route.
+   - Selects the optimal route for each shipment.
+   - Displays a ranked comparison of all routes.
+   - Explains why the selected route is optimal.
+   - Visualizes the comparison with tables and charts.
+   - Allows downloading the results as **CSV** or **JSON**.
+
+No configuration is required.
+
+---
+
+## 📋 Input Data Schema
+
+### shipments.csv
+
+| Column | Description |
+|--------|-------------|
+| shipment_id | Shipment identifier |
+| origin | Origin city |
+| destination | Destination city |
+
+### routes.csv
+
+| Column | Description |
+|--------|-------------|
+| route_id | Route identifier |
+| shipment_id | Shipment identifier |
+| archetype | Route category |
+| total_cost_kvnd | Total transportation cost (kVND) |
+| total_time_h | Travel time (hours) |
+| delay_probability | Probability of delay |
+| expected_risk_hours | Expected delay duration |
+| driver_score | Driver reliability score |
+
+### legs.csv *(Optional)*
+
+| Column | Description |
+|--------|-------------|
+| leg_id | Route segment identifier |
+| route_id | Route identifier |
+| from | Starting location |
+| to | Destination |
+| mode | Transportation mode |
+| cost_kvnd | Segment cost |
+| time_h | Segment travel time |
+| delay_probability | Segment delay probability |
+| risk_extra_h | Additional expected delay |
+
+---
+
+## ✨ Features
+
+- 🤖 Chat-based logistics assistant
+- 🚚 Automatic optimal route recommendation
+- 💰 Deterministic Money Score evaluation
+- 📊 Route ranking and comparison tables
+- 📈 Interactive visualizations with Plotly
+- 📝 Human-readable explanations for every recommendation
+- 📥 Export results as CSV or JSON
+- ⚡ Pure Python & pandas implementation
+- 🔄 Fully reproducible routing decisions
+
+---
+
+## 📁 Project Structure
+
+```text
+Optimizing-Shipment-Routes/
+│
+├── assets/
+│   └── demo.png
+│
+├── data/
+│   ├── shipments.csv
+│   ├── routes.csv
+│   └── legs.csv
+│
+├── app.py
+├── requirements.txt
+├── README.md
+└── ...
+```
+
+---
+
+## 📄 License
+
+This project is intended for educational and research purposes.
